@@ -1,32 +1,53 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+   <div id="app">
+      <b-container class="mt-3">
+         <b-alert variant="success" show>Hello World</b-alert>
+         <b-alert variant="warning" show>Hello World</b-alert>
+         <b-alert variant="danger" show>Hello World</b-alert>
+         <b-button @click="makeToast()" variant="info">Show me toaster</b-button>
+
+         <div class="App__Avatars">
+            <b-avatar variant="primary" text="WX" class="item"></b-avatar>
+            <b-avatar class="item" src="https://www.fillmurray.com/300/300"></b-avatar>
+            <b-avatar class="item" variant="info"></b-avatar>
+            <b-avatar rounded class="item"></b-avatar>
+         </div>
+
+         <div class="mt-3">
+            <b-button variant="outline-info">Messages
+               <b-badge variant="success">9</b-badge>
+            </b-button>
+         </div>
+      </b-container>
+   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+
+
+export default {
+   data: () => ({}),
+   methods: {
+      makeToast() {
+         this.$bvToast.toast('Test Toaster', {
+            title: 'BootstrapVue Toast',
+            toaster: 'b-toaster-bottom-right',
+            autoHideDelay: 2000,
+            appendToast: true,
+            variant: 'success',
+         });
+      }
+   }
 }
+</script>
 
-#nav {
-  padding: 30px;
+<style lang="sass">
+.App__Avatars
+   margin-top: 1rem
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+   .item
+      margin-right: 5px
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+      &:last-child
+         margin-right: 0
 </style>
