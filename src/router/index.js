@@ -1,9 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-const routes = []
+import AdminView from '../views/Admin';
+
+const routes = [
+   {
+      path: '/admin',
+      component: AdminView
+   }
+]
 
 const router = new VueRouter({
    mode: 'history',
