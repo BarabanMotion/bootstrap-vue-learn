@@ -1,4 +1,4 @@
-import { SET_TOASTER } from '../names';
+import { SET_TOASTER } from './mutations';
 
 export default {
    state: {
@@ -11,8 +11,6 @@ export default {
    },
    mutations: {
       [SET_TOASTER](state, payload) {
-         console.log(payload);
-
          state.tooltip = {
             ...state.tooltip,
             ...payload
